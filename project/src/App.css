@@ -12,44 +12,60 @@
   padding: 1rem 2rem;
   border-bottom: 1px solid #eeeeee;
   background-color: #f8f9fa;
+  position: relative;
 }
 
 .header-title {
   font-size: 1.5rem;
   font-weight: bold;
-  flex: 1;
+}
+
+/* Mobile-first: links are hidden by default */
+.header-links {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #eeeeee;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  z-index: 1000;
+}
+
+/* Show links when hamburger menu is clicked */
+.header-links.open {
+  display: flex;
 }
 
 .nav-links {
-  display: flex;
-  justify-content: center;
-}
-
-.nav-links a {
-  margin: 0 2rem;
-  text-decoration: none;
-  color: #007bff;
+  display: flex; /* This will be flexed by the parent */
+  flex-direction: column;
+  margin-bottom: 1rem;
 }
 
 .auth-links {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
+  display: flex; /* This will be flexed by the parent */
+  flex-direction: column;
 }
 
+.nav-links a,
 .auth-links a {
-  margin: 0 1rem;
+  margin: 1rem 0;
   text-decoration: none;
   color: #007bff;
 }
 
-.nav-links a:hover, .auth-links a:hover {
+.nav-links a:hover,
+.auth-links a:hover {
   text-decoration: underline;
 }
 
 .main-content {
   flex-grow: 1;
-  padding: 2rem;
+  padding: 1rem; /* Mobile padding */
 }
 
 .footer {
@@ -57,4 +73,13 @@
   border-top: 1px solid #eeeeee;
   background-color: #f8f9fa;
   margin-top: auto;
+}
+
+/* Hamburger menu is always visible */
+.hamburger-menu {
+  display: block;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
