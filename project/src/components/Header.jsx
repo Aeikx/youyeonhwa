@@ -1,7 +1,20 @@
-import React, { useState } from 'react';
-import '../App.css';
+import React, { useState, useEffect } from "react";
+import "../App.css";
 
 function Header() {
+  const [cookieValue, setCookieValue] = useState(null);
+
+  useEffect(() => {
+    if (document.cookie) {
+      var array = document.cookie.split(encodeURI("userId") + "=");
+      if (array.length >= 2) {
+        var arraySub = array[1].split(";");
+        setCookieValue(decodeURI(arraySub[0]));
+      }
+    }
+    console.log(cookieValue);
+  }, []);
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -11,12 +24,14 @@ function Header() {
   return (
     <header className="header">
       <div className="header-title">
-        <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>test</a>
+        <a href="/" style={{ textDecoration: "none", color: "inherit" }}>
+          test
+        </a>
       </div>
       <button className="hamburger-menu" onClick={toggleMenu}>
         &#9776;
       </button>
-      <div className={`header-links ${menuOpen ? 'open' : ''}`}>
+      <div className={`header-links ${menuOpen ? "open" : ""}`}>
         <nav className="nav-links">
           <a href="/">메인페이지</a>
           <a href="/start">시작하기</a>

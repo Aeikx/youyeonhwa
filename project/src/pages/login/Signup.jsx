@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import "./Signup.css"; // 스타일링을 위해 이 파일을 생성했다고 가정합니다.
 
@@ -32,6 +33,15 @@ function Signup() {
           <button
             className="signup-button"
             onClick={(e) => {
+              const password = document.getElementById("password").value;
+              const confirmPassword =
+                document.getElementById("confirmPassword").value;
+
+              if (password !== confirmPassword) {
+                alert("비밀번호가 일치하지 않습니다.");
+                return;
+              }
+
               if (e.target.disabled) return;
               e.target.disabled = true;
 
@@ -68,7 +78,7 @@ function Signup() {
             회원가입
           </button>
           <p className="login-link">
-            계정이 있으신가요? <a href="/login">로그인</a>
+            계정이 있으신가요? <Link to="/login">로그인</Link>
           </p>
         </div>
       </div>
