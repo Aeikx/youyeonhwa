@@ -57,7 +57,15 @@
 .auth-links a {
   margin: 1rem 0;
   text-decoration: none;
+}
+
+.blue-links {
   color: #007bff;
+  text-decoration: underline;
+}
+
+.red-links {
+  color: #e74c3c;
 }
 
 .nav-links a:hover,

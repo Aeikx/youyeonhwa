@@ -1,35 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from "../../components/Header";
-import "./Signup.css"; // 스타일링을 위해 이 파일을 생성했다고 가정합니다.
+import "./Signup.css";
 
 function Signup() {
   return (
-    <>
-      <div className="signup-container">
-        <div className="signup-box">
-          <h2>회원가입</h2>
-          <div className="input-group">
-            <label htmlFor="name">이름</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div className="input-group">
-            <label htmlFor="email">아이디</label>
-            <input id="id" name="email" required />
-          </div>
-          <div className="input-group">
-            <label htmlFor="password">비밀번호</label>
-            <input id="password" name="password" type="password" required />
-          </div>
-          <div className="input-group">
-            <label htmlFor="confirmPassword">비밀번호 확인</label>
-            <input
-              id="confirmPassword"
-              name="confirmPassword"
-              type="password"
-              required
-            />
-          </div>
+    <div className="signup-container">
+      <div className="signup-box">
+        <h2>회원가입</h2>
+        <form>
+          <input type="text" id="name" placeholder="이름" />
+          <input type="text" id="id" placeholder="아이디" />
+          <input type="password" id="password" placeholder="비밀번호" />
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="비밀번호 확인"
+          />
           <button
             className="signup-button"
             onClick={(e) => {
@@ -77,12 +63,12 @@ function Signup() {
           >
             회원가입
           </button>
-          <p className="login-link">
-            계정이 있으신가요? <Link to="/login">로그인</Link>
-          </p>
+        </form>
+        <div className="login-link">
+          계정이 있으신가요? <Link to="/login">로그인</Link>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
