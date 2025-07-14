@@ -44,7 +44,7 @@ function Start12End() {
       <div className="start-container">
         <button
           onClick={() =>
-            fetch("http://localhost:4000/clear", {
+            fetch("https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/clear", {
               method: "get",
               credentials: "include",
               headers: {

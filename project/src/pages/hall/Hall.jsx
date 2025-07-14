@@ -5,7 +5,7 @@ function Hall() {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/hall", {
+    fetch("https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/hall", {
       method: "get",
       credentials: "include",
       headers: {

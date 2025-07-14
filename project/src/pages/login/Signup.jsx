@@ -38,7 +38,7 @@ function Signup() {
                 userPW2: document.getElementById("confirmPassword").value,
               };
 
-              fetch("http://localhost:4000/signup", {
+              fetch("https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/signup", {
                 method: "post",
                 headers: {
                   "Content-Type": "application/json",

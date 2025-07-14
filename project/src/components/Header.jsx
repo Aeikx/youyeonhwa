@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 
 function Header() {
   useEffect(() => {
-    fetch("http://localhost:4000/check-login", {
+    fetch("https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/check-login", {
       credentials: "include", // ✅ HttpOnly 쿠키를 자동 포함시킴
     })
       .then((res) => res.json())
@@ -48,7 +48,7 @@ function Header() {
           <a
             className="blue-links"
             onClick={() => {
-              fetch("http://localhost:4000/check-login", {
+              fetch("https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/check-login", {
                 credentials: "include", // ✅ HttpOnly 쿠키를 자동 포함시킴
               })
                 .then((res) => res.json())
@@ -79,7 +79,7 @@ function Header() {
             id="logout"
             className="red-links"
             onClick={() => {
-              fetch("http://localhost:4000/logout", {
+              fetch("https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/logout", {
                 credentials: "include",
               });
               location.href = "/";

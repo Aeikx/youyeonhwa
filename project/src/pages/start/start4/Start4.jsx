@@ -35,7 +35,7 @@ function Start4() {
       <button
         onClick={() => {
           if (document.getElementById("ans").value === "HIGH") {
-            fetch("http://localhost:4000/q_ans", {
+            fetch("https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_ans", {
               method: "post",
               credentials: "include",
               headers: {
